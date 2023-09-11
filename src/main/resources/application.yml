@@ -1,0 +1,33 @@
+server:
+    port: 80 # 접속 포트
+    error:
+        include-exception: true #오류 응답에 exception의 내용을 포함할지 여부 (TRUE, FALSE)
+        include-stacktrace: never #오류 응답에 stacktrace 내용을 포함할지 여부 (ALWAYS, NEVER, ON_TRACE_PARAM)
+        path: /error #오류 응답을 처리할 핸들러(ErrorController)의 path
+        whitelabel:
+            enabled: false #브라우저 요청에 대해 서버 오류시 기본으로 노출할 페이지를 사용할지 여부 (TRUE, FALSE)
+
+spring:
+    devtools:
+        restart:
+            enabled: true # classpath에 있는 파일 바뀌었을 때 프로젝트 재시작
+            log-condition-evaluation-delta: false # bean 추가 및 제거 혹은 configuration 속성들을 설정하는 것과 같은 변경을 기록하는 리포트 사용 여부
+        livereload:
+            enabled: true # view단이 바뀌었을 때 자동으로 리로드
+    # database
+    datasource:
+        hikari:
+            driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+            jdbc-url: jdbc:sqlserver://58.230.162.186:5378;databaseName=ERPG_JOONGANG;encrypt=true;trustServerCertificate=true;
+            username: erpg_joongang
+            password: "!*erpg_joongang*!"
+
+# logging
+logging:
+    level:
+        "[org.hibernate.type]": trace
+
+# mybatis
+mybatis:
+    mapper-locations: mapper/*.xml
+    config-location: classpath:config/mybatis-config.xml
