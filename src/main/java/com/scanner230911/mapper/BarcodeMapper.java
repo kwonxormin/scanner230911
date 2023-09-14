@@ -6,6 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 
 @Mapper
-public interface CommonMapper {
-    public List<HashMap<String, Object>> getList(HashMap<String, Object> body) throws Exception;
+public interface BarcodeMapper {
+    public List<HashMap<String, Object>> findByBacode(HashMap<String, Object> params);
 }

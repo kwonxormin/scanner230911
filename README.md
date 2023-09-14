@@ -14,3 +14,4 @@
     4. MyBatis Framework
     5. (추가) mssql-jdbc
     6. (추가) spring-boot-starter-tomcat
+    7. (추가) com.google.zxing
