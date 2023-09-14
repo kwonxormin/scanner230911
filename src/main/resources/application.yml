@@ -18,9 +18,9 @@ spring:
     datasource:
         hikari:
             driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-            jdbc-url: jdbc:sqlserver://58.230.162.186:5378;databaseName=ERPG_JOONGANG;encrypt=true;trustServerCertificate=true;
-            username: erpg_joongang
-            password: "!*erpg_joongang*!"
+            jdbc-url: jdbc:sqlserver://58.230.162.186:5378;databaseName=ERPG_INWOO;encrypt=true;trustServerCertificate=true;
+            username: erpg_inwoo
+            password: "!*erpg_inwoo*!"
 
 # logging
 logging:
