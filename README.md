@@ -15,3 +15,6 @@
     5. (추가) mssql-jdbc
     6. (추가) spring-boot-starter-tomcat
     7. (추가) com.google.zxing
+
+## 2023-10-19 박광수 이사님 추가 요청
+- BSS_ITEM BARCODE 컬럼 이외에 MODEL_NO 도 함께 조회해서 둘 중 하나라도 조회되면 보이도록 수정 요청

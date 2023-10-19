@@ -30,10 +30,19 @@ public class BarcodeService {
             
             dataList = barcodeMapper.findByBacode(params);
 
+            // barcode 로 조회 결과 나오지 않은 경우 model_no로 다시 조회
             if(dataList.isEmpty()){
-                return ResponseEntity.ok().body(
-                        ResponseData.builder().code(200).msg("조회 결과 없음").build()
-                );
+                dataList = new ArrayList<HashMap<String, Object>>();
+                dataList = barcodeMapper.findByModelNo(params);
+
+                if(dataList.isEmpty()){
+                    return 
+                        ResponseEntity.ok().body(
+                            ResponseData.builder().code(200).msg("조회 결과 없음").build()
+                        );
+                }
+                
+                barcode = dataList.get(0).get("BARCODE").toString();
             }
 
             String filePath = "/home/ec2-user/upload/"+barcode+".png"; // 저장할 파일 경로

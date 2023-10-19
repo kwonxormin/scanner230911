@@ -18,4 +18,19 @@
         WHERE
             BSS_ITEM.BARCODE = #{barcode}
     </select>
+
+    <select id="findByModelNo" resultType="HashMap">
+        SELECT
+            BSS_ITEM.ITEM_CODE AS ITEM_CODE,
+            BSS_ITEM.MODEL_NO AS BARCODE,
+            BSS_ITEM.ITEM_NM_C AS ITEM_NM_C,
+            BSS_ITEM.BCNC_SE  AS BCNC_SE,
+            ISNULL(CONVERT(DECIMAL(17, 0), MTL_INVNTRY.INVNTRY_QY) ,0) AS INVNTRY_QY
+        FROM
+            BSS_ITEM
+            FULL OUTER JOIN MTL_INVNTRY
+            ON BSS_ITEM.ITEM_CODE = MTL_INVNTRY.ITEM_CODE
+        WHERE
+            BSS_ITEM.MODEL_NO = #{barcode}
+    </select>
 </mapper>
